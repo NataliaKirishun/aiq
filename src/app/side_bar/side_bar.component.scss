@@ -1,0 +1,9 @@
+.side-bar {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-bar-spacer {
+    flex: 1 1 auto;
+}

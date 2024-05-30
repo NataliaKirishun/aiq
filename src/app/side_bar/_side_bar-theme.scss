@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+    $side-bar-background-color: #ffffff;
+    $side-bar-border: #e2e2ed;
+
+    .side-bar {
+      --mat-toolbar-container-background-color: $side-bar-background-color;
+      border-right: 2px solid $side-bar-border;
+    }
+}
+
+@mixin typography($theme) {
+}
+
+@mixin theme($theme) {
+
+  @if mat.theme-has($theme, color) {
+    @include color($theme);
+  }
+
+  @if mat.theme-has($theme, typography) {
+    @include typography($theme);
+  }
+}

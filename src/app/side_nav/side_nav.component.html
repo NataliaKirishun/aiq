@@ -1,0 +1,25 @@
+<nav class="aiq-side-nav" [class.aiq-side-nav--collapsed]="!isExpanded">
+  <mat-nav-list class="aiq-nav-list" aria-label="Main navigation" i18-aria-label="Main navigation">
+    @for (sideNavGroup of sideNavConfig; track sideNavGroup; let last = $last) {
+      @for (navItem of sideNavGroup; track navItem) {
+        <a
+          mat-list-item
+          class="aiq-nav-list-item"
+          [class.aiq-nav-list-item-collapsed]="!isExpanded"
+          [routerLink]="navItem.path"
+          routerLinkActive
+          #rla="routerLinkActive"
+          [activated]="rla.isActive"
+        >
+          <mat-icon class="aiq-nav-list-icon" mat-list-icon>{{navItem.icon}}</mat-icon>
+            @if (isExpanded) {
+              <span class="aiq-nav-list-title" mat-lis-item-title>{{navItem.text}}</span>
+            }
+        </a>
+      }
+      @if (!last) {
+        <mat-divider/>
+      }
+    }
+  </mat-nav-list>
+</nav>

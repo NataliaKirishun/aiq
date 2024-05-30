@@ -1,0 +1,31 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+    $nav-list-item-color: #c7c5e1;
+    $active-nav-list-item-color: #4c05b2;
+
+    .aiq-nav-list-icon {
+        color: $nav-list-item-color;
+    }
+
+    .mdc-list-item--activated {
+        .aiq-nav-list-icon, .aiq-nav-list-title {
+            color: $active-nav-list-item-color;        
+        }  
+    }
+}
+
+@mixin typography($theme) {
+}
+
+@mixin theme($theme) {
+
+  @if mat.theme-has($theme, color) {
+    @include color($theme);
+  }
+
+  @if mat.theme-has($theme, typography) {
+    @include typography($theme);
+  }
+}
