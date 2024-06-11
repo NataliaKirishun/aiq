@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { OverlayWindow } from '../../overlay-window/overlay-window.component';
 
 @Component({
-  selector: 'aiq-create-training',
+  selector: 'app-edit-training',
   standalone: true,
   imports: [OverlayWindow],
-  templateUrl: './create-training.component.html',
-  styleUrl: './create-training.component.css'
+  templateUrl: './edit-training.component.html',
+  styleUrl: './edit-training.component.css'
 })
-export class CreateTraining {
+export class EditTraining {
 
 }
